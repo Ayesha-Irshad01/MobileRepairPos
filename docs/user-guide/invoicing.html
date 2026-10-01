@@ -1,0 +1,314 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sales & Invoicing - Mobile Repair POS Documentation</title>
+    
+    <meta name="description" content="Sales & Invoicing for Mobile Repair POS.">
+    <meta name="robots" content="index, follow">
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="../../public/screenshots/logo.png">
+
+    <!-- Fonts: Inter -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+
+    <!-- Tailwind CSS with Typography Plugin for professional rendering -->
+    <script src="https://cdn.tailwindcss.com?plugins=typography"></script>
+    <script>
+      tailwind.config = {
+        darkMode: 'class',
+        theme: {
+          extend: {
+            fontFamily: {
+              sans: ['Inter', 'sans-serif'],
+            }
+          }
+        }
+      }
+    </script>
+    
+    <!-- FontAwesome for Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="../css/style.css">
+    <style>
+      body { font-family: 'Inter', sans-serif; }
+      /* Elegant scrollbar */
+      ::-webkit-scrollbar { width: 6px; }
+      ::-webkit-scrollbar-track { background: transparent; }
+      ::-webkit-scrollbar-thumb { background: #cbd5e1; border-radius: 10px; }
+      .dark ::-webkit-scrollbar-thumb { background: #475569; }
+    </style>
+</head>
+<body class="bg-slate-50 text-slate-800 antialiased flex h-screen overflow-hidden selection:bg-blue-200 selection:text-blue-900 dark:bg-[#0f172a] dark:text-slate-200">
+
+    <!-- Sidebar -->
+    <aside id="sidebar" class="bg-white border-r border-slate-200 w-[280px] flex-shrink-0 fixed inset-y-0 left-0 transform -translate-x-full md:relative md:translate-x-0 z-20 flex flex-col transition-transform duration-300 dark:bg-[#1e293b] dark:border-slate-800 shadow-sm">
+        <div class="h-16 flex items-center px-6 border-b border-slate-200 dark:border-slate-800">
+      <div class="flex items-center gap-2">
+          <div class="w-8 h-8 rounded-xl bg-gradient-to-br from-blue-500 to-blue-700 text-white flex items-center justify-center font-bold shadow-md shadow-blue-600/30">M</div>
+          <div>
+            <h1 class="text-lg font-bold text-slate-900 dark:text-white leading-tight">MRP Docs</h1>
+            <p class="text-[10px] text-slate-500 dark:text-slate-400 uppercase tracking-widest leading-tight">Mobile Repair POS</p>
+          </div>
+      </div>
+      <button id="closeSidebar" class="ml-auto md:hidden text-slate-500 hover:text-slate-700 dark:hover:text-slate-300">
+          <i class="fas fa-times"></i>
+      </button>
+  </div>
+  <nav class="flex-1 overflow-y-auto py-6 px-4">
+      <ul class="space-y-8"><li>
+          <h3 class="text-[11px] font-bold text-slate-400 uppercase tracking-widest mb-3 px-3 dark:text-slate-500">Getting Started</h3>
+          <ul class="space-y-1"><li>
+              <a href="../index.html" class="flex items-center px-3 py-2.5 rounded-r-lg text-slate-600 hover:bg-slate-100 hover:text-slate-900 border-l-[3px] border-transparent transition-colors dark:text-slate-400 dark:hover:bg-slate-800/50 dark:hover:text-slate-200">
+                  <i class="fas fa-home w-5 text-center mr-2 opacity-70"></i>
+                  Home
+              </a>
+          </li><li>
+              <a href="../getting-started/intro.html" class="flex items-center px-3 py-2.5 rounded-r-lg text-slate-600 hover:bg-slate-100 hover:text-slate-900 border-l-[3px] border-transparent transition-colors dark:text-slate-400 dark:hover:bg-slate-800/50 dark:hover:text-slate-200">
+                  <i class="fas fa-info-circle w-5 text-center mr-2 opacity-70"></i>
+                  Introduction
+              </a>
+          </li><li>
+              <a href="../getting-started/features.html" class="flex items-center px-3 py-2.5 rounded-r-lg text-slate-600 hover:bg-slate-100 hover:text-slate-900 border-l-[3px] border-transparent transition-colors dark:text-slate-400 dark:hover:bg-slate-800/50 dark:hover:text-slate-200">
+                  <i class="fas fa-star w-5 text-center mr-2 opacity-70"></i>
+                  Overview & Features
+              </a>
+          </li></ul></li><li>
+          <h3 class="text-[11px] font-bold text-slate-400 uppercase tracking-widest mb-3 px-3 dark:text-slate-500">System Guide</h3>
+          <ul class="space-y-1"><li>
+              <a href="../system-guide/prerequisites.html" class="flex items-center px-3 py-2.5 rounded-r-lg text-slate-600 hover:bg-slate-100 hover:text-slate-900 border-l-[3px] border-transparent transition-colors dark:text-slate-400 dark:hover:bg-slate-800/50 dark:hover:text-slate-200">
+                  <i class="fas fa-clipboard-check w-5 text-center mr-2 opacity-70"></i>
+                  Prerequisites
+              </a>
+          </li><li>
+              <a href="../system-guide/installation.html" class="flex items-center px-3 py-2.5 rounded-r-lg text-slate-600 hover:bg-slate-100 hover:text-slate-900 border-l-[3px] border-transparent transition-colors dark:text-slate-400 dark:hover:bg-slate-800/50 dark:hover:text-slate-200">
+                  <i class="fas fa-laptop-code w-5 text-center mr-2 opacity-70"></i>
+                  Local Installation
+              </a>
+          </li><li>
+              <a href="../system-guide/env-variables.html" class="flex items-center px-3 py-2.5 rounded-r-lg text-slate-600 hover:bg-slate-100 hover:text-slate-900 border-l-[3px] border-transparent transition-colors dark:text-slate-400 dark:hover:bg-slate-800/50 dark:hover:text-slate-200">
+                  <i class="fas fa-key w-5 text-center mr-2 opacity-70"></i>
+                  Environment Variables
+              </a>
+          </li><li>
+              <a href="../system-guide/tech-stack.html" class="flex items-center px-3 py-2.5 rounded-r-lg text-slate-600 hover:bg-slate-100 hover:text-slate-900 border-l-[3px] border-transparent transition-colors dark:text-slate-400 dark:hover:bg-slate-800/50 dark:hover:text-slate-200">
+                  <i class="fas fa-layer-group w-5 text-center mr-2 opacity-70"></i>
+                  Tech Stack
+              </a>
+          </li><li>
+              <a href="../system-guide/architecture.html" class="flex items-center px-3 py-2.5 rounded-r-lg text-slate-600 hover:bg-slate-100 hover:text-slate-900 border-l-[3px] border-transparent transition-colors dark:text-slate-400 dark:hover:bg-slate-800/50 dark:hover:text-slate-200">
+                  <i class="fas fa-sitemap w-5 text-center mr-2 opacity-70"></i>
+                  System Architecture
+              </a>
+          </li><li>
+              <a href="../system-guide/database.html" class="flex items-center px-3 py-2.5 rounded-r-lg text-slate-600 hover:bg-slate-100 hover:text-slate-900 border-l-[3px] border-transparent transition-colors dark:text-slate-400 dark:hover:bg-slate-800/50 dark:hover:text-slate-200">
+                  <i class="fas fa-database w-5 text-center mr-2 opacity-70"></i>
+                  Database Schema
+              </a>
+          </li><li>
+              <a href="../system-guide/deployment.html" class="flex items-center px-3 py-2.5 rounded-r-lg text-slate-600 hover:bg-slate-100 hover:text-slate-900 border-l-[3px] border-transparent transition-colors dark:text-slate-400 dark:hover:bg-slate-800/50 dark:hover:text-slate-200">
+                  <i class="fas fa-cloud-arrow-up w-5 text-center mr-2 opacity-70"></i>
+                  Deployment
+              </a>
+          </li></ul></li><li>
+          <h3 class="text-[11px] font-bold text-slate-400 uppercase tracking-widest mb-3 px-3 dark:text-slate-500">User Guide</h3>
+          <ul class="space-y-1"><li>
+              <a href="../user-guide/auth-roles.html" class="flex items-center px-3 py-2.5 rounded-r-lg text-slate-600 hover:bg-slate-100 hover:text-slate-900 border-l-[3px] border-transparent transition-colors dark:text-slate-400 dark:hover:bg-slate-800/50 dark:hover:text-slate-200">
+                  <i class="fas fa-user-shield w-5 text-center mr-2 opacity-70"></i>
+                  Authentication & Roles
+              </a>
+          </li><li>
+              <a href="../user-guide/dashboard.html" class="flex items-center px-3 py-2.5 rounded-r-lg text-slate-600 hover:bg-slate-100 hover:text-slate-900 border-l-[3px] border-transparent transition-colors dark:text-slate-400 dark:hover:bg-slate-800/50 dark:hover:text-slate-200">
+                  <i class="fas fa-chart-line w-5 text-center mr-2 opacity-70"></i>
+                  Dashboard Overview
+              </a>
+          </li><li>
+              <a href="../user-guide/repair-management.html" class="flex items-center px-3 py-2.5 rounded-r-lg text-slate-600 hover:bg-slate-100 hover:text-slate-900 border-l-[3px] border-transparent transition-colors dark:text-slate-400 dark:hover:bg-slate-800/50 dark:hover:text-slate-200">
+                  <i class="fas fa-tools w-5 text-center mr-2 opacity-70"></i>
+                  Repair Management
+              </a>
+          </li><li>
+              <a href="../user-guide/inventory.html" class="flex items-center px-3 py-2.5 rounded-r-lg text-slate-600 hover:bg-slate-100 hover:text-slate-900 border-l-[3px] border-transparent transition-colors dark:text-slate-400 dark:hover:bg-slate-800/50 dark:hover:text-slate-200">
+                  <i class="fas fa-boxes-stacked w-5 text-center mr-2 opacity-70"></i>
+                  Inventory & Parts
+              </a>
+          </li><li>
+              <a href="../user-guide/customers.html" class="flex items-center px-3 py-2.5 rounded-r-lg text-slate-600 hover:bg-slate-100 hover:text-slate-900 border-l-[3px] border-transparent transition-colors dark:text-slate-400 dark:hover:bg-slate-800/50 dark:hover:text-slate-200">
+                  <i class="fas fa-users w-5 text-center mr-2 opacity-70"></i>
+                  Customer Management
+              </a>
+          </li><li>
+              <a href="../user-guide/invoicing.html" class="flex items-center px-3 py-2.5 rounded-r-lg bg-blue-50 text-blue-700 font-semibold border-l-[3px] border-blue-600 dark:bg-blue-900/20 dark:text-blue-400">
+                  <i class="fas fa-file-invoice-dollar w-5 text-center mr-2 opacity-70"></i>
+                  Sales & Invoicing
+              </a>
+          </li><li>
+              <a href="../user-guide/payments.html" class="flex items-center px-3 py-2.5 rounded-r-lg text-slate-600 hover:bg-slate-100 hover:text-slate-900 border-l-[3px] border-transparent transition-colors dark:text-slate-400 dark:hover:bg-slate-800/50 dark:hover:text-slate-200">
+                  <i class="fas fa-credit-card w-5 text-center mr-2 opacity-70"></i>
+                  Payments
+              </a>
+          </li><li>
+              <a href="../user-guide/expenses.html" class="flex items-center px-3 py-2.5 rounded-r-lg text-slate-600 hover:bg-slate-100 hover:text-slate-900 border-l-[3px] border-transparent transition-colors dark:text-slate-400 dark:hover:bg-slate-800/50 dark:hover:text-slate-200">
+                  <i class="fas fa-receipt w-5 text-center mr-2 opacity-70"></i>
+                  Expenses
+              </a>
+          </li><li>
+              <a href="../user-guide/devices.html" class="flex items-center px-3 py-2.5 rounded-r-lg text-slate-600 hover:bg-slate-100 hover:text-slate-900 border-l-[3px] border-transparent transition-colors dark:text-slate-400 dark:hover:bg-slate-800/50 dark:hover:text-slate-200">
+                  <i class="fas fa-mobile-screen w-5 text-center mr-2 opacity-70"></i>
+                  Devices
+              </a>
+          </li><li>
+              <a href="../user-guide/settings.html" class="flex items-center px-3 py-2.5 rounded-r-lg text-slate-600 hover:bg-slate-100 hover:text-slate-900 border-l-[3px] border-transparent transition-colors dark:text-slate-400 dark:hover:bg-slate-800/50 dark:hover:text-slate-200">
+                  <i class="fas fa-cog w-5 text-center mr-2 opacity-70"></i>
+                  Settings
+              </a>
+          </li></ul></li></ul></nav>
+    </aside>
+
+    <!-- Main Content -->
+    <div class="flex-1 flex flex-col w-full h-screen overflow-hidden bg-slate-50/50 dark:bg-[#0f172a]">
+        
+        <!-- Header -->
+        <header class="h-16 border-b border-slate-200 flex items-center justify-between px-4 sm:px-8 z-10 flex-shrink-0 backdrop-blur-xl bg-white/70 dark:bg-[#0f172a]/70 dark:border-slate-800 sticky top-0">
+            <div class="flex items-center">
+                <button id="sidebarToggle" class="md:hidden text-slate-500 hover:text-slate-800 focus:outline-none mr-4 dark:text-slate-400 dark:hover:text-white">
+                    <i class="fas fa-bars text-xl"></i>
+                </button>
+                
+                <!-- Breadcrumbs -->
+                <nav class="hidden sm:flex text-sm font-medium text-slate-500 dark:text-slate-400">
+                    <ol class="list-none p-0 inline-flex items-center">
+                        <li class="flex items-center">
+                            <span class="text-slate-400 dark:text-slate-500">Documentation</span>
+                            <i class="fas fa-chevron-right text-[10px] mx-3 text-slate-300 dark:text-slate-600"></i>
+                        </li>
+                        <li class="flex items-center">
+                            <span class="text-slate-400 dark:text-slate-500">User Guide</span>
+                            <i class="fas fa-chevron-right text-[10px] mx-3 text-slate-300 dark:text-slate-600"></i>
+                        </li>
+                        <li class="flex items-center">
+                            <span class="text-slate-800 font-semibold dark:text-slate-200">Sales & Invoicing</span>
+                        </li>
+                    </ol>
+                </nav>
+            </div>
+
+            <div class="flex items-center space-x-4">
+                <!-- Search -->
+                <div class="relative hidden sm:block">
+                    <input type="text" id="searchInput" placeholder="Search documentation..." class="w-72 pl-11 pr-4 py-2.5 bg-slate-100/80 border border-slate-200/60 rounded-full text-sm focus:outline-none focus:ring-2 focus:ring-blue-500 focus:bg-white focus:border-transparent transition-all dark:bg-slate-800 dark:border-slate-700 dark:text-white dark:focus:bg-slate-700 shadow-inner">
+                    <i class="fas fa-search absolute left-4 top-3 text-slate-400"></i>
+                </div>
+                
+                <!-- Dark Mode Toggle -->
+                <button id="theme-toggle" class="text-slate-500 hover:text-blue-600 hover:bg-blue-50 focus:outline-none w-10 h-10 rounded-full flex items-center justify-center transition-all dark:text-slate-400 dark:hover:bg-slate-800 dark:hover:text-blue-400 border border-transparent hover:border-blue-100 dark:hover:border-slate-700">
+                    <i id="theme-toggle-dark-icon" class="fas fa-moon text-lg"></i>
+                    <i id="theme-toggle-light-icon" class="fas fa-sun text-lg hidden"></i>
+                </button>
+            </div>
+        </header>
+
+        <!-- Search input for mobile -->
+        <div class="sm:hidden p-4 bg-white border-b border-slate-200 dark:bg-[#1e293b] dark:border-slate-800">
+            <div class="relative">
+                <input type="text" id="searchInputMobile" placeholder="Search documentation..." class="w-full pl-11 pr-4 py-2.5 bg-slate-100 border-none rounded-full text-sm focus:outline-none focus:ring-2 focus:ring-blue-500 transition-all dark:bg-slate-800 dark:text-white">
+                <i class="fas fa-search absolute left-4 top-3.5 text-slate-400"></i>
+            </div>
+        </div>
+
+        <!-- Scrollable Content Area -->
+        <main class="flex-1 overflow-y-auto p-6 sm:p-10 lg:p-16">
+            <div class="max-w-4xl mx-auto searchable-content">
+                <!-- Pro Tip: Using Tailwind Typography plugin (.prose) to automagically format all theory text professionally -->
+                <div class="prose prose-slate prose-blue max-w-none dark:prose-invert prose-headings:font-bold prose-h1:text-4xl prose-h1:tracking-tight prose-a:font-semibold prose-img:rounded-xl">
+                    
+    <div class="not-prose inline-block bg-blue-100 text-blue-700 text-xs font-bold px-3 py-1 rounded-full mb-4 uppercase tracking-widest">User Guide</div>
+    <h1>Sales & Invoicing</h1>
+    <p class="lead">
+        Closing the loop. The invoicing module generates professional, financial ledgers binding labor and parts to final monetary transactions.
+    </p>
+
+    <h2>Automated Generation</h2>
+    <p>Upon moving a repair ticket to the <em>Completed</em> state, the system parses the linked inventory parts (at retail price) and the specified labor charge to automatically construct an invoice. This prevents arithmetic errors and ensures uniform billing.</p>
+
+    <h2>Payment Statuses</h2>
+    <p>Invoices maintain their own lifecycle (Pending, Paid, Void). Receipts can be printed or emailed directly to the customer's CRM profile email.</p>
+    
+    <figure class="mt-8 not-prose border border-slate-200 rounded-xl bg-slate-50 p-2 shadow-sm dark:bg-slate-800 dark:border-slate-700">
+        <img src="../../public/screenshots/invoicing.png" alt="Sales and Invoicing" class="rounded-lg w-full shadow-sm border border-slate-200/60 dark:border-slate-700" loading="lazy">
+        <figcaption class="text-center text-xs text-slate-500 mt-3 font-medium">Fig 6. Professional invoice generation.</figcaption>
+    </figure>
+  
+                </div>
+                
+                <div class="not-prose mt-16 flex items-center justify-between border-t border-slate-200 pt-8 dark:border-slate-800">
+        <a href="../user-guide/customers.html" class="group flex items-center gap-4 text-slate-500 hover:text-blue-600 dark:text-slate-400 dark:hover:text-blue-400 transition-colors">
+            <div class="w-10 h-10 flex-shrink-0 flex items-center justify-center rounded-full bg-slate-100 group-hover:bg-blue-50 dark:bg-slate-800 dark:group-hover:bg-slate-700 transition-colors border border-transparent group-hover:border-blue-200 dark:group-hover:border-slate-600">
+                <i class="fas fa-arrow-left text-sm"></i>
+            </div>
+            <div class="flex flex-col hidden sm:flex">
+                <span class="text-[10px] font-bold uppercase tracking-widest opacity-70 mb-0.5">Previous</span>
+                <span class="font-medium text-sm text-slate-800 dark:text-slate-200 group-hover:text-blue-600 dark:group-hover:text-blue-400">Customer Management</span>
+            </div>
+        </a>
+        <a href="../user-guide/payments.html" class="group flex items-center gap-4 text-slate-500 hover:text-blue-600 dark:text-slate-400 dark:hover:text-blue-400 transition-colors text-right ml-auto">
+            <div class="flex flex-col items-end hidden sm:flex">
+                <span class="text-[10px] font-bold uppercase tracking-widest opacity-70 mb-0.5">Next</span>
+                <span class="font-medium text-sm text-slate-800 dark:text-slate-200 group-hover:text-blue-600 dark:group-hover:text-blue-400">Payments</span>
+            </div>
+            <div class="w-10 h-10 flex-shrink-0 flex items-center justify-center rounded-full bg-slate-100 group-hover:bg-blue-50 dark:bg-slate-800 dark:group-hover:bg-slate-700 transition-colors border border-transparent group-hover:border-blue-200 dark:group-hover:border-slate-600">
+                <i class="fas fa-arrow-right text-sm"></i>
+            </div>
+        </a></div>
+            </div>
+            
+            <!-- Footer -->
+            <footer class="max-w-4xl mx-auto mt-16 pt-8 border-t border-slate-200 dark:border-slate-800 text-sm text-slate-500 flex justify-between items-center mb-10">
+                <p>&copy; 2026 Mobile Repair POS. Masterpiece Documentation.</p>
+                <div class="flex gap-5 text-slate-400">
+                    <a href="#" class="hover:text-blue-600 transition-colors"><i class="fab fa-github text-xl"></i></a>
+                    <a href="#" class="hover:text-blue-600 transition-colors"><i class="fab fa-twitter text-xl"></i></a>
+                </div>
+            </footer>
+        </main>
+    </div>
+
+    <!-- Floating Contact Us Button -->
+    <a href="#" class="contact-floating fixed bottom-8 right-8 bg-blue-600 hover:bg-blue-700 text-white font-semibold py-3.5 px-7 rounded-full shadow-xl shadow-blue-600/30 transition-all hover:-translate-y-1 hover:shadow-2xl flex items-center z-50">
+        <i class="fas fa-headset mr-2 text-lg"></i> Technical Support
+    </a>
+
+    <!-- Scripts -->
+    <script src="https://code.jquery.com/jquery-3.7.0.min.js"></script>
+    <script src="../js/script.js"></script>
+    <script>
+      const themeToggleBtn = document.getElementById('theme-toggle');
+      const darkIcon = document.getElementById('theme-toggle-dark-icon');
+      const lightIcon = document.getElementById('theme-toggle-light-icon');
+
+      if (localStorage.getItem('color-theme') === 'dark' || (!('color-theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+          document.documentElement.classList.add('dark');
+          lightIcon.classList.remove('hidden');
+          darkIcon.classList.add('hidden');
+      }
+
+      themeToggleBtn.addEventListener('click', function() {
+          darkIcon.classList.toggle('hidden');
+          lightIcon.classList.toggle('hidden');
+          if (document.documentElement.classList.contains('dark')) {
+              document.documentElement.classList.remove('dark');
+              localStorage.setItem('color-theme', 'light');
+          } else {
+              document.documentElement.classList.add('dark');
+              localStorage.setItem('color-theme', 'dark');
+          }
+      });
+    </script>
+</body>
+</html>

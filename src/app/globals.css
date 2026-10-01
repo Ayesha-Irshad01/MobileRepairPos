@@ -1,0 +1,360 @@
+@import "tailwindcss";
+
+/* ── Tailwind v4: enable class-based dark mode ───────────────── */
+@variant dark (&:where(.dark, .dark *));
+
+/* ════════════════════════════════════════════════════════════════
+   DESIGN TOKENS
+   ════════════════════════════════════════════════════════════════ */
+
+/* ── Light mode ─────────────────────────────────────────────── */
+:root {
+  --background: #f8fafc;
+  --foreground: #0f172a;
+  --surface:    #ffffff;
+  --border:     #e2e8f0;
+  --muted:      #64748b;
+
+  /* Accent — Blue (default) */
+  --accent-50:  #eff6ff;
+  --accent-100: #dbeafe;
+  --accent-200: #bfdbfe;
+  --accent-400: #60a5fa;
+  --accent-500: #3b82f6;
+  --accent-600: #2563eb;
+  --accent-700: #1d4ed8;
+}
+
+/* ── Dark mode tokens ────────────────────────────────────────── */
+.dark {
+  --background: #0d1117;
+  --foreground: #e2e8f0;
+  --surface:    #161b22;
+  --border:     #30363d;
+  --muted:      #8b949e;
+}
+
+/* ── Accent: Green ───────────────────────────────────────────── */
+.accent-green {
+  --accent-50:  #f0fdf4; --accent-100: #dcfce7; --accent-200: #bbf7d0;
+  --accent-400: #4ade80; --accent-500: #22c55e; --accent-600: #16a34a;
+  --accent-700: #15803d;
+}
+/* ── Accent: Purple ──────────────────────────────────────────── */
+.accent-purple {
+  --accent-50:  #faf5ff; --accent-100: #f3e8ff; --accent-200: #e9d5ff;
+  --accent-400: #c084fc; --accent-500: #a855f7; --accent-600: #9333ea;
+  --accent-700: #7e22ce;
+}
+/* ── Accent: Orange ──────────────────────────────────────────── */
+.accent-orange {
+  --accent-50:  #fff7ed; --accent-100: #ffedd5; --accent-200: #fed7aa;
+  --accent-400: #fb923c; --accent-500: #f97316; --accent-600: #ea580c;
+  --accent-700: #c2410c;
+}
+
+/* ════════════════════════════════════════════════════════════════
+   BASE BODY & TYPOGRAPHY
+   ════════════════════════════════════════════════════════════════ */
+html {
+  font-size: 14px;
+  -webkit-text-size-adjust: 100%;
+}
+
+body {
+  background-color: var(--background);
+  color:            var(--foreground);
+  font-family:      var(--font-geist-sans), -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  line-height: 1.5;
+  font-weight: 400;
+  letter-spacing: -0.011em;
+}
+
+/* ── Headings ──────────────────────────────────────────────────── */
+h1 { font-size: 1.75rem; font-weight: 700; line-height: 1.2; letter-spacing: -0.02em; }
+h2 { font-size: 1.5rem;  font-weight: 700; line-height: 1.25; letter-spacing: -0.015em; }
+h3 { font-size: 1.25rem; font-weight: 600; line-height: 1.3; letter-spacing: -0.01em; }
+h4 { font-size: 1.125rem; font-weight: 600; line-height: 1.35; letter-spacing: -0.005em; }
+h5 { font-size: 1rem;    font-weight: 600; line-height: 1.4; letter-spacing: 0; }
+h6 { font-size: 0.875rem; font-weight: 600; line-height: 1.4; letter-spacing: 0; }
+
+/* ── Text elements ─────────────────────────────────────────────── */
+p { line-height: 1.6; }
+small { font-size: 0.8125rem; line-height: 1.5; }
+strong { font-weight: 600; }
+
+/* ── Links ─────────────────────────────────────────────────────── */
+a { color: inherit; text-decoration: none; }
+a:hover { text-decoration: none; }
+
+/* ── Form elements ─────────────────────────────────────────────── */
+input, select, textarea, button {
+  font-family: inherit;
+  font-size: inherit;
+  line-height: inherit;
+}
+
+/* ── Scrollbar styling ─────────────────────────────────────────── */
+* { scrollbar-width: thin; }
+* { scrollbar-color: rgba(148, 163, 184, 0.4) transparent; }
+.dark * { scrollbar-color: rgba(148, 163, 184, 0.25) transparent; }
+
+::-webkit-scrollbar { width: 8px; height: 8px; }
+::-webkit-scrollbar-track { background: transparent; }
+::-webkit-scrollbar-thumb { background: rgba(148, 163, 184, 0.4); border-radius: 4px; border: 2px solid transparent; background-clip: content-box; }
+::-webkit-scrollbar-thumb:hover { background: rgba(148, 163, 184, 0.6); }
+.dark ::-webkit-scrollbar-thumb { background: rgba(148, 163, 184, 0.25); }
+.dark ::-webkit-scrollbar-thumb:hover { background: rgba(148, 163, 184, 0.4); }
+
+/* ── Scrollbar utility classes ─────────────────────────────────── */
+.scrollbar-thin { scrollbar-width: thin; }
+.scrollbar-track-transparent { scrollbar-color: rgba(148, 163, 184, 0.3) transparent; }
+.scrollbar-thumb-gray-300::-webkit-scrollbar-thumb { background: #cbd5e1; }
+.dark .scrollbar-thumb-white\/\[0\.15\]::-webkit-scrollbar-thumb { background: rgba(255, 255, 255, 0.15); }
+
+/* ── Professional UI utilities ──────────────────────────────────── */
+.focus-ring {
+  @apply focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 dark:focus:ring-offset-[#161b22];
+}
+
+.transition-smooth {
+  @apply transition-all duration-200 ease-out;
+}
+
+/* Better form label consistency */
+label {
+  @apply text-sm font-medium text-gray-700 dark:text-white/70;
+}
+
+/* Table improvements */
+table {
+  @apply w-full border-collapse;
+}
+
+th {
+  @apply px-4 py-3 text-left text-xs font-semibold uppercase tracking-wider text-gray-500 dark:text-white/40 bg-gray-50 dark:bg-white/[0.03];
+}
+
+td {
+  @apply px-4 py-3 text-sm text-gray-900 dark:text-white/80 border-t border-gray-100 dark:border-white/[0.06];
+}
+
+/* Badge improvements */
+.badge {
+  @apply inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium;
+}
+
+/* ════════════════════════════════════════════════════════════════
+   GLOBAL DARK MODE OVERRIDES
+   These rules fire whenever <html> has class="dark".
+   They cover every bg-white card, table, input, and text element
+   across ALL pages without needing per-element dark: classes.
+   ════════════════════════════════════════════════════════════════ */
+
+/* ── Page & content backgrounds ─────────────────────────────── */
+.dark main,
+.dark .space-y-6,
+.dark [class*="p-6"] {
+  color: #e2e8f0;
+}
+
+/* ── White surface cards ─────────────────────────────────────── */
+.dark .bg-white {
+  background-color: #161b22 !important;
+  color: #e2e8f0;
+}
+
+/* ── Gray-50 surfaces (table headers, section headers) ──────── */
+.dark .bg-gray-50,
+.dark .bg-gray-50\/50,
+.dark .bg-gray-50\/30,
+.dark .bg-slate-50,
+.dark .bg-slate-50\/70 {
+  background-color: #1c2128 !important;
+}
+
+/* ── Borders ─────────────────────────────────────────────────── */
+.dark .border-gray-100 { border-color: #21262d !important; }
+.dark .border-gray-200 { border-color: #30363d !important; }
+.dark .border-gray-300 { border-color: #3d444d !important; }
+.dark .divide-gray-100 > * + * { border-color: #21262d !important; }
+.dark .divide-gray-50  > * + * { border-color: #21262d !important; }
+.dark .ring-gray-200\/50 { --tw-ring-color: rgba(48,54,61,0.5) !important; }
+
+/* ── Main sidebar nav: always keep links bright regardless of dark overrides ── */
+[data-main-sidebar] nav a {
+  color: #cbd5e1 !important;
+}
+[data-main-sidebar] nav a:hover {
+  color: #ffffff !important;
+}
+[data-main-sidebar] nav a svg {
+  color: #94a3b8 !important;
+}
+[data-main-sidebar] nav a:hover svg {
+  color: #ffffff !important;
+}
+
+/* ── Headings & body text ────────────────────────────────────── */
+.dark .text-gray-900  { color: #f0f6fc !important; }
+.dark .text-gray-800  { color: #e6edf3 !important; }
+.dark .text-gray-700  { color: #cdd9e5 !important; }
+.dark .text-gray-600  { color: #b1bac4 !important; }
+.dark .text-gray-500  { color: #8b949e !important; }
+.dark .text-gray-400  { color: #6e7681 !important; }
+
+/* ── Table rows hover ────────────────────────────────────────── */
+.dark .hover\:bg-gray-50:hover,
+.dark .hover\:bg-slate-50:hover,
+.dark .hover\:bg-gray-50\/70:hover {
+  background-color: #1c2128 !important;
+}
+
+/* ── Inputs, selects, textareas ──────────────────────────────── */
+.dark input:not([type="checkbox"]):not([type="radio"]):not([type="range"]),
+.dark select,
+.dark textarea {
+  background-color: #0d1117 !important;
+  border-color:     #30363d !important;
+  color:            #e2e8f0 !important;
+}
+.dark input::placeholder,
+.dark textarea::placeholder {
+  color: #6e7681 !important;
+}
+.dark input:focus,
+.dark select:focus,
+.dark textarea:focus {
+  border-color: var(--accent-500) !important;
+  outline: none;
+}
+/* select option background in dark mode */
+.dark select option {
+  background-color: #161b22;
+  color: #e2e8f0;
+}
+
+/* ── Action buttons: "View" (gray outline) ───────────────────── */
+.dark .border-gray-200.bg-white {
+  background-color: #21262d !important;
+  border-color:     #30363d !important;
+  color:            #cdd9e5 !important;
+}
+.dark .border-gray-200.bg-white:hover {
+  background-color: #2d333b !important;
+}
+
+/* ── Modals ──────────────────────────────────────────────────── */
+.dark .bg-white.shadow-2xl,
+.dark .bg-white.shadow-xl {
+  background-color: #161b22 !important;
+}
+
+/* ── Labels on forms ─────────────────────────────────────────── */
+.dark label {
+  color: #cdd9e5;
+}
+
+/* ── Checkbox / radio ────────────────────────────────────────── */
+.dark input[type="checkbox"],
+.dark input[type="radio"] {
+  background-color: #0d1117 !important;
+  border-color:     #30363d !important;
+}
+
+/* ── Toggle switch track (bg-gray-300 = off state) ───────────── */
+.dark .bg-gray-300 {
+  background-color: #30363d !important;
+}
+
+/* ── Section header dividers inside cards ────────────────────── */
+.dark .border-b.border-gray-100 {
+  border-color: #21262d !important;
+}
+.dark .border-t.border-gray-100 {
+  border-color: #21262d !important;
+}
+
+/* ── Page-level headers ──────────────────────────────────────── */
+.dark h1 { color: #f0f6fc; }
+.dark h2 { color: #e6edf3; }
+.dark h3 { color: #cdd9e5; }
+
+/* ── Muted sub-text ──────────────────────────────────────────── */
+.dark p  { color: #8b949e; }
+.dark td { color: #cdd9e5; }
+.dark th { color: #8b949e !important; }
+
+/* ── Status badges that use light backgrounds ────────────────── */
+.dark .bg-gray-100  { background-color: #21262d !important; }
+.dark .text-gray-700.bg-gray-100 { color: #cdd9e5 !important; }
+
+/* ── Search/filter wrapper cards ─────────────────────────────── */
+.dark .rounded-xl.border.border-gray-200.bg-white.p-4 {
+  background-color: #161b22 !important;
+}
+
+/* ── Accordion rows (WhatsApp templates) ────────────────────── */
+.dark .hover\:bg-gray-50:hover {
+  background-color: #1c2128 !important;
+}
+.dark .bg-gray-50.px-4.py-3 {
+  background-color: #1c2128 !important;
+}
+.dark .border-dashed.border-gray-300 {
+  border-color: #30363d !important;
+  background-color: #0d1117 !important;
+}
+
+/* ── Green / amber alert backgrounds (keep tint, adjust for dark) */
+.dark .bg-green-50  { background-color: #0f2a1a !important; }
+.dark .bg-amber-50  { background-color: #2a1f0f !important; }
+.dark .bg-red-50    { background-color: #2a0f0f !important; }
+.dark .bg-blue-50   { background-color: #0f1e2a !important; }
+.dark .bg-yellow-50 { background-color: #2a200f !important; }
+.dark .bg-purple-50 { background-color: #1a0f2a !important; }
+.dark .bg-orange-50 { background-color: #2a170f !important; }
+.dark .bg-indigo-50 { background-color: #0f102a !important; }
+.dark .bg-teal-50   { background-color: #0f2a27 !important; }
+.dark .bg-cyan-50   { background-color: #0f272a !important; }
+.dark .bg-emerald-50 { background-color: #0f2a1e !important; }
+
+/* ── Settings page sidebar ───────────────────────────────────── */
+.dark .bg-white\/60 {
+  background-color: rgba(22,27,34,0.9) !important;
+}
+
+/* ── Kbd shortcut hint ───────────────────────────────────────── */
+.dark kbd {
+  background-color: #21262d !important;
+  border-color:     #30363d !important;
+  color:            #8b949e !important;
+}
+
+/* ════════════════════════════════════════════════════════════════
+   ACCENT BUTTON UTILITY
+   ════════════════════════════════════════════════════════════════ */
+.btn-accent           { background-color: var(--accent-600); color: #fff; }
+.btn-accent:hover     { background-color: var(--accent-700); }
+
+/* ════════════════════════════════════════════════════════════════
+   TABLE DENSITY
+   ════════════════════════════════════════════════════════════════ */
+.density-compact td,
+.density-compact th {
+  padding-top:    0.375rem !important;
+  padding-bottom: 0.375rem !important;
+}
+
+/* ════════════════════════════════════════════════════════════════
+   SCROLLBAR HIDDEN
+   ════════════════════════════════════════════════════════════════ */
+.scrollbar-hide::-webkit-scrollbar {
+  display: none;
+}
+.scrollbar-hide {
+  -ms-overflow-style: none; /* IE and Edge */
+  scrollbar-width: none;    /* Firefox */
+}

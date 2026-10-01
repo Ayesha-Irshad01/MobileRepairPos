@@ -1,0 +1,64 @@
+body {
+    transition: background-color 0.3s, color 0.3s;
+}
+
+.dark-mode {
+    background-color: #111827; /* Tailwind gray-900 */
+    color: #f3f4f6; /* Tailwind gray-100 */
+}
+
+.dark-mode .bg-white {
+    background-color: #1f2937 !important; /* Tailwind gray-800 */
+}
+
+.dark-mode .text-gray-900 {
+    color: #f9fafb !important;
+}
+.dark-mode .text-gray-800 {
+    color: #e5e7eb !important;
+}
+.dark-mode .text-gray-600 {
+    color: #9ca3af !important;
+}
+.dark-mode .text-gray-500 {
+    color: #9ca3af !important;
+}
+.dark-mode .border-gray-200 {
+    border-color: #374151 !important;
+}
+.dark-mode .hover\:bg-gray-100:hover {
+    background-color: #374151 !important;
+}
+.dark-mode .hover\:bg-gray-50:hover {
+    background-color: #374151 !important;
+}
+
+/* Image Zoom */
+.zoomable-img {
+    cursor: zoom-in;
+    transition: transform 0.2s ease-in-out;
+    max-width: 100%;
+    height: auto;
+}
+
+.zoomable-img.zoomed {
+    transform: scale(1.5);
+    cursor: zoom-out;
+    z-index: 50;
+    position: relative;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.5);
+}
+
+/* Sidebar transition */
+#sidebar {
+    transition: transform 0.3s ease-in-out;
+}
+
+/* Contact Us Button Floating */
+.contact-floating {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    z-index: 100;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+}
