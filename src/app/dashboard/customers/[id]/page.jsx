@@ -2,11 +2,13 @@
 
 import { useEffect, useState, Suspense } from "react";
 import { useParams, useSearchParams } from "next/navigation";
+import { useRouter } from "next/navigation";
 import { customerApi } from "@/lib/api/customers";
 import CustomerForm from "@/components/customers/CustomerForm";
 
 function CustomerDetailsPageInner() {
   const params = useParams();
+  const router = useRouter();
   const customerId = params.id;
   const searchParams = useSearchParams();
   const editMode = searchParams.get("edit") === "true";

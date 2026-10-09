@@ -2,7 +2,7 @@
 
 import { useEffect, useState } from "react";
 import { useRouter } from "next/navigation";
-import { Smartphone, Plus, Search, Trash2, Cpu } from "lucide-react";
+import { Smartphone, Plus, Search, Cpu } from "lucide-react";
 
 import { deviceApi } from "@/lib/api/devices";
 import DeviceForm from "@/components/devices/DeviceForm";
@@ -16,9 +16,6 @@ export default function DevicesPage() {
 
   const [showForm, setShowForm] = useState(false);
   const [creatingDevice, setCreatingDevice] = useState(false);
-
-  const [deletingId, setDeletingId] = useState(null);
-  const [confirmDeleteId, setConfirmDeleteId] = useState(null);
 
   // ── Load devices ──────────────────────────────────────────────
   useEffect(() => {
@@ -50,18 +47,22 @@ export default function DevicesPage() {
     }
   }
 
-  // ── Delete device (inline) ────────────────────────────────────
+  // ── Delete device ─────────────────────────────────────────────
   async function handleDeleteDevice(id) {
+    const confirmed = window.confirm(
+      "Are you sure you want to delete this device?"
+    );
+
+    if (!confirmed) {
+      return;
+    }
+
     try {
-      setDeletingId(id);
       await deviceApi.delete(id);
       setDevices((prev) => prev.filter((d) => d._id !== id));
-      setConfirmDeleteId(null);
     } catch (error) {
       console.error("DELETE DEVICE ERROR:", error);
       alert(error.message || "Failed to delete device");
-    } finally {
-      setDeletingId(null);
     }
   }
 
@@ -159,40 +160,6 @@ export default function DevicesPage() {
                 submitting={creatingDevice}
                 onCancel={() => setShowForm(false)}
               />
-            </div>
-          </div>
-        </div>
-      )}
-
-      {/* ── Delete Confirm Modal ─────────────────────────────────── */}
-      {confirmDeleteId && (
-        <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-slate-900/50 backdrop-blur-sm">
-          <div className="w-full max-w-sm rounded-2xl bg-white shadow-2xl ring-1 ring-gray-200/60 p-6 space-y-4">
-            <div className="w-12 h-12 rounded-full bg-red-50 flex items-center justify-center mx-auto">
-              <Trash2 className="w-5 h-5 text-red-500" />
-            </div>
-            <div className="text-center space-y-1">
-              <h3 className="text-base font-semibold text-gray-900">Delete Device?</h3>
-              <p className="text-sm text-gray-500">
-                This action cannot be undone. The device will be permanently removed.
-              </p>
-            </div>
-            <div className="flex gap-2 pt-1">
-              <button
-                type="button"
-                onClick={() => setConfirmDeleteId(null)}
-                className="flex-1 h-10 rounded-xl border border-gray-200 bg-white text-sm font-medium text-gray-700 hover:bg-gray-50 transition-colors focus:outline-none focus:ring-2 focus:ring-gray-200"
-              >
-                Cancel
-              </button>
-              <button
-                type="button"
-                disabled={deletingId === confirmDeleteId}
-                onClick={() => handleDeleteDevice(confirmDeleteId)}
-                className="flex-1 h-10 rounded-xl bg-red-600 text-sm font-medium text-white hover:bg-red-700 disabled:opacity-60 disabled:cursor-not-allowed transition-colors focus:outline-none focus:ring-2 focus:ring-red-500 focus:ring-offset-2"
-              >
-                {deletingId === confirmDeleteId ? "Deleting…" : "Delete"}
-              </button>
             </div>
           </div>
         </div>
@@ -330,7 +297,7 @@ export default function DevicesPage() {
                           {/* Delete */}
                           <button
                             type="button"
-                            onClick={() => setConfirmDeleteId(device._id)}
+                            onClick={() => handleDeleteDevice(device._id)}
                             className="inline-flex h-8 items-center justify-center rounded-lg border border-red-200 bg-red-50 px-3 text-xs font-medium text-red-600 hover:bg-red-100 shadow-sm transition-colors focus:outline-none focus:ring-2 focus:ring-red-500 focus:ring-offset-2"
                           >
                             Delete

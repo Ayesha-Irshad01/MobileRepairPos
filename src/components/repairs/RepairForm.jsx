@@ -115,27 +115,31 @@ export default function RepairForm({
     });
   }
 
-  async function handleCustomerCreated(newCustomer) {
-    setCustomers((prev) => [...prev, newCustomer]);
+  async function handleCustomerCreated(customerData) {
+  const newCustomer = await customerApi.create(customerData);
 
-    setForm((prev) => ({
-      ...prev,
-      customer: newCustomer._id,
-    }));
+  setCustomers((prev) => [...prev, newCustomer]);
 
-    setShowCustomerForm(false);
-  }
+  setForm((prev) => ({
+    ...prev,
+    customer: newCustomer._id,
+  }));
 
-  async function handleDeviceCreated(newDevice) {
-    setDevices((prev) => [...prev, newDevice]);
+  setShowCustomerForm(false);
+}
 
-    setForm((prev) => ({
-      ...prev,
-      device: newDevice._id,
-    }));
+  async function handleDeviceCreated(deviceData) {
+  const newDevice = await deviceApi.create(deviceData);
 
-    setShowDeviceForm(false);
-  }
+  setDevices((prev) => [...prev, newDevice]);
+
+  setForm((prev) => ({
+    ...prev,
+    device: newDevice._id,
+  }));
+
+  setShowDeviceForm(false);
+}
 
   return (
     <>
@@ -425,7 +429,7 @@ export default function RepairForm({
             </div>
 
             <CustomerForm
-              onSuccess={handleCustomerCreated}
+              onSubmit={handleCustomerCreated}
               onCancel={() => setShowCustomerForm(false)}
             />
           </div>
@@ -451,7 +455,7 @@ export default function RepairForm({
             </div>
 
             <DeviceForm
-              onSuccess={handleDeviceCreated}
+              onSubmit={handleDeviceCreated}
               onCancel={() => setShowDeviceForm(false)}
             />
           </div>

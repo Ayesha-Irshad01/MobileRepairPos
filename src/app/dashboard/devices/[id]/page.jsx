@@ -57,8 +57,6 @@ export default function DeviceDetailsPage() {
   // Start in edit mode if ?edit=true came from the list page
   const [editing, setEditing] = useState(searchParams.get("edit") === "true");
   const [updatingDevice, setUpdatingDevice] = useState(false);
-  const [deleteConfirm, setDeleteConfirm] = useState(false);
-  const [deleting, setDeleting] = useState(false);
   const [saved, setSaved] = useState(false);
 
   // ── Load ─────────────────────────────────────────────────────
@@ -97,14 +95,20 @@ export default function DeviceDetailsPage() {
 
   // ── Delete ───────────────────────────────────────────────────
   async function handleDeleteDevice() {
+    const confirmed = window.confirm(
+      "Are you sure you want to delete this device?"
+    );
+
+    if (!confirmed) {
+      return;
+    }
+
     try {
-      setDeleting(true);
       await deviceApi.delete(device._id);
       router.push("/dashboard/devices");
     } catch (err) {
       console.error("DELETE DEVICE ERROR:", err);
       alert(err.message || "Failed to delete device");
-      setDeleting(false);
     }
   }
 
@@ -220,7 +224,7 @@ export default function DeviceDetailsPage() {
 
             <button
               type="button"
-              onClick={() => setDeleteConfirm(true)}
+              onClick={handleDeleteDevice}
               className="inline-flex items-center gap-2 h-9 px-4 rounded-xl border border-red-200 bg-red-50 text-sm font-semibold text-red-600 hover:bg-red-100 hover:border-red-300 active:scale-[0.98] transition-all focus:outline-none focus:ring-2 focus:ring-red-500 focus:ring-offset-2"
             >
               <Trash2 className="w-3.5 h-3.5" />
@@ -229,41 +233,6 @@ export default function DeviceDetailsPage() {
           </div>
         )}
       </div>
-
-      {/* ── Delete Confirm Modal ────────────────────────────────── */}
-      {deleteConfirm && (
-        <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-slate-900/50 backdrop-blur-sm">
-          <div className="w-full max-w-sm rounded-2xl bg-white shadow-2xl ring-1 ring-gray-200/60 p-6 space-y-4">
-            <div className="w-12 h-12 rounded-full bg-red-50 flex items-center justify-center mx-auto">
-              <Trash2 className="w-5 h-5 text-red-500" />
-            </div>
-            <div className="text-center space-y-1">
-              <h3 className="text-base font-semibold text-gray-900">Delete this device?</h3>
-              <p className="text-sm text-gray-500">
-                <strong className="text-gray-700">{device.brand} {device.model}</strong> will be permanently removed. This cannot be undone.
-              </p>
-            </div>
-            <div className="flex gap-2 pt-1">
-              <button
-                type="button"
-                onClick={() => setDeleteConfirm(false)}
-                disabled={deleting}
-                className="flex-1 h-10 rounded-xl border border-gray-200 bg-white text-sm font-medium text-gray-700 hover:bg-gray-50 disabled:opacity-50 transition-colors focus:outline-none"
-              >
-                Cancel
-              </button>
-              <button
-                type="button"
-                onClick={handleDeleteDevice}
-                disabled={deleting}
-                className="flex-1 h-10 rounded-xl bg-red-600 text-sm font-semibold text-white hover:bg-red-700 disabled:opacity-60 disabled:cursor-not-allowed transition-colors focus:outline-none focus:ring-2 focus:ring-red-500 focus:ring-offset-2"
-              >
-                {deleting ? "Deleting…" : "Yes, Delete"}
-              </button>
-            </div>
-          </div>
-        </div>
-      )}
 
       {/* ── Edit Mode ───────────────────────────────────────────── */}
       {editing ? (

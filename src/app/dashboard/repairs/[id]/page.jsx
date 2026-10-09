@@ -12,7 +12,7 @@ import { Button } from "@/components/ui/Button";
 export default function RepairDetailsPage() {
   const params = useParams();
   const repairId = params.id;
-
+  const router = useRouter();
 const [repair, setRepair] = useState(null);
 const [loading, setLoading] = useState(true);
 const [updatingStatus, setUpdatingStatus] = useState(false);
