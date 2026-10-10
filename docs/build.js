@@ -103,7 +103,7 @@ const contentMap = {
 
     <h3>2. Real-time Inventory & Supply Chain</h3>
     <p>
-        Inventory management in repair shops requires micro-precision. The platform allows you to track individual SKUs, monitor minimum stock thresholds, and link specific replacement parts directly to active repair tickets—automatically decrementing stock upon ticket completion.
+        Inventory management in repair shops requires micro-precision. The platform allows you to track individual SKUs, monitor minimum stock thresholds, and link specific replacement parts directly to active repair tickets - automatically decrementing stock upon ticket completion.
     </p>
 
     <h3>3. Multi-tier Authorization</h3>
@@ -191,7 +191,7 @@ NEXTAUTH_URL=http://localhost:3000</code></pre>
     <div class="not-prose inline-block bg-blue-100 text-blue-700 text-xs font-bold px-3 py-1 rounded-full mb-4 uppercase tracking-widest">System Guide</div>
     <h1>Tech Stack & Architecture</h1>
     <p class="lead">
-        Mobile Repair POS relies on a modern, decoupled monolithic architecture—utilizing Server-Side Rendering (SSR) for optimal performance.
+        Mobile Repair POS relies on a modern, decoupled monolithic architecture - utilizing Server-Side Rendering (SSR) for optimal performance.
     </p>
     
     <h2>The Frontend</h2>
@@ -307,7 +307,7 @@ pm2 start npm --name "mobile-pos" -- start</code></pre>
     </p>
 
     <h2>1. The Repair Form (Intake)</h2>
-    <p>When a customer walks in, staff utilize the Repair Form to generate a digital intake ticket. Best practices require filling out exhaustive device identifiers—such as IMEI or Serial numbers—to prevent device mix-ups. The physical condition (scratches, cracks) must be heavily documented at this stage to avoid liability.</p>
+    <p>When a customer walks in, staff utilize the Repair Form to generate a digital intake ticket. Best practices require filling out exhaustive device identifiers - such as IMEI or Serial numbers - to prevent device mix-ups. The physical condition (scratches, cracks) must be heavily documented at this stage to avoid liability.</p>
 
     <figure class="my-6 not-prose border border-slate-200 rounded-xl bg-slate-50 p-2 shadow-sm dark:bg-slate-800 dark:border-slate-700">
         <img src="../../public/screenshots/repair-form.png" alt="Repair Form" class="rounded-lg w-full shadow-sm border border-slate-200/60 dark:border-slate-700" loading="lazy">
@@ -603,7 +603,7 @@ pm2 start npm --name "mobile-pos" -- start</code></pre>
 }</code></pre>
 
     <h2>10. Settings</h2>
-    <p>A singleton document storing the full application configuration — business profile, tax rates, appearance, and notification preferences.</p>
+    <p>A singleton document storing the full application configuration - business profile, tax rates, appearance, and notification preferences.</p>
     <pre><code>Settings {
   business: { shopName, phone, email, address, currency, taxId }
   regional: { timezone, dateFormat, language }

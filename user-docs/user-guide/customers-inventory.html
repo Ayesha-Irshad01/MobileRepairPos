@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+     <!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-4XJGHJJV00"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-4XJGHJJV00');
+</script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Customers & Inventory - Mobile Repair POS Documentation</title>
+    
+    <meta name="description" content="Customers & Inventory for Mobile Repair POS.">
+    <meta name="robots" content="index, follow">
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="../../public/screenshots/logo.png">
+
+    <!-- Fonts: Inter -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = {
+        darkMode: 'class',
+        theme: {
+          extend: {
+            fontFamily: {
+              sans: ['Inter', 'sans-serif'],
+            }
+          }
+        }
+      }
+    </script>
+    
+    <!-- FontAwesome for Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="../css/style.css">
+    <style>
+      body { font-family: 'Inter', sans-serif; }
+      .searchable-content h1, .searchable-content h2 { letter-spacing: -0.025em; }
+    </style>
+</head>
+<body class="bg-slate-50 text-slate-800 antialiased flex h-screen overflow-hidden selection:bg-red-200 selection:text-red-900 dark:bg-slate-900 dark:text-slate-200">
+
+    <!-- Sidebar -->
+    <aside id="sidebar" class="bg-[#f8fafc] border-r border-slate-200 w-[280px] flex-shrink-0 fixed inset-y-0 left-0 transform -translate-x-full md:relative md:translate-x-0 z-20 flex flex-col transition-transform duration-300 dark:bg-[#0f172a] dark:border-slate-800">
+        <div class="h-16 flex items-center px-6 border-b border-slate-200 dark:border-slate-800">
+      <div class="flex items-center gap-2">
+          <div class="w-8 h-8 rounded-full bg-red-700 text-white flex items-center justify-center font-bold shadow-md shadow-red-700/30">M</div>
+          <div>
+            <h1 class="text-lg font-bold text-slate-900 dark:text-white leading-tight">MRP User Docs</h1>
+            <p class="text-[10px] text-slate-500 dark:text-slate-400 uppercase tracking-widest leading-tight">Mobile Repair POS</p>
+          </div>
+      </div>
+      <button id="closeSidebar" class="ml-auto md:hidden text-slate-500 hover:text-slate-700 dark:hover:text-slate-300">
+          <i class="fas fa-times"></i>
+      </button>
+  </div>
+  <nav class="flex-1 overflow-y-auto py-6 px-4">
+      <ul class="space-y-6"><li>
+          <h3 class="text-[11px] font-bold text-slate-400 uppercase tracking-widest mb-3 px-3 dark:text-slate-500">Home</h3>
+          <ul class="space-y-1"><li>
+              <a href="../index.html" class="flex items-center px-3 py-2.5 rounded-r-lg text-slate-600 hover:bg-slate-100 hover:text-slate-900 border-l-[3px] border-transparent transition-colors dark:text-slate-400 dark:hover:bg-slate-800/50 dark:hover:text-slate-200">
+                  <i class="fas fa-home w-5 text-center mr-2 opacity-70"></i>
+                  Home
+              </a>
+          </li></ul></li><li>
+          <h3 class="text-[11px] font-bold text-slate-400 uppercase tracking-widest mb-3 px-3 dark:text-slate-500">User Guide</h3>
+          <ul class="space-y-1"><li>
+              <a href="../user-guide/dashboard.html" class="flex items-center px-3 py-2.5 rounded-r-lg text-slate-600 hover:bg-slate-100 hover:text-slate-900 border-l-[3px] border-transparent transition-colors dark:text-slate-400 dark:hover:bg-slate-800/50 dark:hover:text-slate-200">
+                  <i class="fas fa-chart-line w-5 text-center mr-2 opacity-70"></i>
+                  The Dashboard
+              </a>
+          </li><li>
+              <a href="../user-guide/repair-form.html" class="flex items-center px-3 py-2.5 rounded-r-lg text-slate-600 hover:bg-slate-100 hover:text-slate-900 border-l-[3px] border-transparent transition-colors dark:text-slate-400 dark:hover:bg-slate-800/50 dark:hover:text-slate-200">
+                  <i class="fas fa-file-signature w-5 text-center mr-2 opacity-70"></i>
+                  Creating a Repair Form
+              </a>
+          </li><li>
+              <a href="../user-guide/repair-timeline.html" class="flex items-center px-3 py-2.5 rounded-r-lg text-slate-600 hover:bg-slate-100 hover:text-slate-900 border-l-[3px] border-transparent transition-colors dark:text-slate-400 dark:hover:bg-slate-800/50 dark:hover:text-slate-200">
+                  <i class="fas fa-clock-rotate-left w-5 text-center mr-2 opacity-70"></i>
+                  Tracking Repair Timeline
+              </a>
+          </li><li>
+              <a href="../user-guide/customers-inventory.html" class="flex items-center px-3 py-2.5 rounded-r-lg bg-red-50 text-red-700 font-semibold border-l-[3px] border-red-700 dark:bg-red-900/20 dark:text-red-400">
+                  <i class="fas fa-boxes-stacked w-5 text-center mr-2 opacity-70"></i>
+                  Customers & Inventory
+              </a>
+          </li></ul></li></ul></nav>
+    </aside>
+
+    <!-- Main Content -->
+    <div class="flex-1 flex flex-col w-full h-screen overflow-hidden bg-white dark:bg-[#0b0f19]">
+        
+        <!-- Header -->
+        <header class="h-16 border-b border-slate-200 flex items-center justify-between px-4 sm:px-8 z-10 flex-shrink-0 backdrop-blur-md bg-white/80 dark:bg-[#0b0f19]/80 dark:border-slate-800 sticky top-0">
+            <div class="flex items-center">
+                <button id="sidebarToggle" class="md:hidden text-slate-500 hover:text-slate-800 focus:outline-none mr-4 dark:text-slate-400 dark:hover:text-white">
+                    <i class="fas fa-bars text-xl"></i>
+                </button>
+                
+                <!-- Breadcrumbs -->
+                <nav class="hidden sm:flex text-[13px] font-medium text-slate-500 dark:text-slate-400">
+                    <ol class="list-none p-0 inline-flex items-center">
+                        <li class="flex items-center">
+                            <span class="text-slate-400 dark:text-slate-500">Docs</span>
+                            <i class="fas fa-chevron-right text-[10px] mx-3 text-slate-300 dark:text-slate-600"></i>
+                        </li>
+                        <li class="flex items-center">
+                            <span class="text-slate-400 dark:text-slate-500">User Guide</span>
+                            <i class="fas fa-chevron-right text-[10px] mx-3 text-slate-300 dark:text-slate-600"></i>
+                        </li>
+                        <li class="flex items-center">
+                            <span class="text-slate-800 font-semibold dark:text-slate-200">Customers & Inventory</span>
+                        </li>
+                    </ol>
+                </nav>
+            </div>
+
+            <div class="flex items-center space-x-4">
+                <!-- Search -->
+                <div class="relative hidden sm:block">
+                    <input type="text" id="searchInput" placeholder="Search documentation..." class="w-64 pl-10 pr-4 py-2 bg-slate-100 border-none rounded-full text-sm focus:outline-none focus:ring-2 focus:ring-red-500 focus:bg-white transition-all dark:bg-slate-800 dark:text-white dark:focus:bg-slate-700">
+                    <i class="fas fa-search absolute left-4 top-2.5 text-slate-400"></i>
+                </div>
+                
+                <!-- Dark Mode Toggle -->
+                <button id="theme-toggle" class="text-slate-500 hover:text-slate-800 hover:bg-slate-100 focus:outline-none w-10 h-10 rounded-full flex items-center justify-center transition-colors dark:text-slate-400 dark:hover:bg-slate-800 dark:hover:text-white">
+                    <i id="theme-toggle-dark-icon" class="fas fa-moon text-lg"></i>
+                    <i id="theme-toggle-light-icon" class="fas fa-sun text-lg hidden"></i>
+                </button>
+            </div>
+        </header>
+
+        <!-- Search input for mobile -->
+        <div class="sm:hidden p-4 bg-white border-b border-slate-200 dark:bg-[#0b0f19] dark:border-slate-800">
+            <div class="relative">
+                <input type="text" id="searchInputMobile" placeholder="Search documentation..." class="w-full pl-10 pr-4 py-2.5 bg-slate-100 border-none rounded-full text-sm focus:outline-none focus:ring-2 focus:ring-red-500 transition-all dark:bg-slate-800 dark:text-white">
+                <i class="fas fa-search absolute left-4 top-3 text-slate-400"></i>
+            </div>
+        </div>
+
+        <!-- Scrollable Content Area -->
+        <main class="flex-1 overflow-y-auto p-6 sm:p-10 lg:p-14">
+            <div class="max-w-3xl mx-auto searchable-content">
+                
+    <div class="inline-block bg-red-100 text-red-700 text-xs font-bold px-3 py-1 rounded-full mb-4">USER GUIDE</div>
+    <h1 class="text-3xl sm:text-4xl font-extrabold text-slate-900 mb-6 dark:text-slate-100">Managing Customers & Inventory</h1>
+    <p class="text-slate-600 leading-relaxed mb-4 dark:text-slate-300">
+        <em>We are currently expanding this section. If you need details on the Customer Management or Inventory features, please ensure those screenshots are provided.</em>
+    </p>
+  
+                
+                <div class="mt-16 flex items-center justify-between border-t border-slate-200 pt-8 dark:border-slate-700">
+        <a href="../user-guide/repair-timeline.html" class="flex flex-col items-start px-5 py-4 border border-slate-200 rounded-xl hover:border-red-700 hover:shadow-sm transition-all w-[48%] group dark:border-slate-700 dark:hover:border-red-600 bg-white dark:bg-slate-800">
+            <span class="text-xs text-slate-500 mb-1 group-hover:text-red-700 dark:group-hover:text-red-400 font-medium"><i class="fas fa-chevron-left mr-1 text-[10px]"></i> Previous</span>
+            <span class="font-bold text-slate-800 dark:text-slate-200 group-hover:text-red-700 dark:group-hover:text-red-400">Tracking Repair Timeline</span>
+        </a>
+        <a href="../system-guide/intro.html" class="flex flex-col items-end px-5 py-4 border border-slate-200 rounded-xl hover:border-red-700 hover:shadow-sm transition-all w-[48%] text-right group dark:border-slate-700 dark:hover:border-red-600 bg-white dark:bg-slate-800">
+            <span class="text-xs text-slate-500 mb-1 group-hover:text-red-700 dark:group-hover:text-red-400 font-medium">Next <i class="fas fa-chevron-right ml-1 text-[10px]"></i></span>
+            <span class="font-bold text-slate-800 dark:text-slate-200 group-hover:text-red-700 dark:group-hover:text-red-400">Introduction & Prerequisites</span>
+        </a></div>
+            </div>
+            
+            <!-- Footer -->
+            <footer class="max-w-3xl mx-auto mt-12 pt-8 border-t border-slate-200 dark:border-slate-800 text-sm text-slate-500 flex justify-between items-center mb-10">
+                <p>&copy; 2026 Mobile Repair POS.</p>
+                <div class="flex gap-4 text-slate-400">
+                    <a href="#" class="hover:text-red-700 transition-colors"><i class="fab fa-github text-lg"></i></a>
+                    <a href="#" class="hover:text-red-700 transition-colors"><i class="fab fa-twitter text-lg"></i></a>
+                </div>
+            </footer>
+        </main>
+    </div>
+
+    <!-- Floating Contact Us Button -->
+    <a href="#" class="contact-floating fixed bottom-6 right-6 bg-[#b91c1c] hover:bg-[#990000] text-white font-semibold py-3 px-6 rounded-full shadow-lg shadow-red-900/30 transition-transform hover:-translate-y-1 flex items-center z-50">
+        <i class="fas fa-headset mr-2"></i> Contact Us
+    </a>
+
+    <!-- Scripts -->
+    <script src="https://code.jquery.com/jquery-3.7.0.min.js"></script>
+    <script src="../js/script.js"></script>
+    <script>
+      // Simple inline dark mode logic for preview
+      const themeToggleBtn = document.getElementById('theme-toggle');
+      const darkIcon = document.getElementById('theme-toggle-dark-icon');
+      const lightIcon = document.getElementById('theme-toggle-light-icon');
+
+      if (localStorage.getItem('color-theme') === 'dark' || (!('color-theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+          document.documentElement.classList.add('dark');
+          lightIcon.classList.remove('hidden');
+          darkIcon.classList.add('hidden');
+      }
+
+      themeToggleBtn.addEventListener('click', function() {
+          darkIcon.classList.toggle('hidden');
+          lightIcon.classList.toggle('hidden');
+          if (document.documentElement.classList.contains('dark')) {
+              document.documentElement.classList.remove('dark');
+              localStorage.setItem('color-theme', 'light');
+          } else {
+              document.documentElement.classList.add('dark');
+              localStorage.setItem('color-theme', 'dark');
+          }
+      });
+    </script>
+</body>
+</html>

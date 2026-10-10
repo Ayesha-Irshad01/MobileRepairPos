@@ -29,12 +29,12 @@ Mobile Repair POS is a modern, full-stack Point of Sale and store management sys
 
 ---
 
-## 🛠 Technology Stack
-- **Framework:** [Next.js](https://nextjs.org/) (React)
-- **Styling:** [Tailwind CSS](https://tailwindcss.com/)
-- **Icons:** [Lucide React](https://lucide.dev/)
-- **Database:** [MongoDB](https://www.mongodb.com/) & [Mongoose](https://mongoosejs.com/)
-- **Authentication:** [JSON Web Tokens (JWT)](https://jwt.io/) & bcryptjs
+## 🛠 Technology Stack (v0.1.0)
+- **Framework:** [Next.js v16.3.0](https://nextjs.org/) (React v19.2.8)
+- **Styling:** [Tailwind CSS v4](https://tailwindcss.com/)
+- **Icons:** [Lucide React v1.38.0](https://lucide.dev/)
+- **Database:** [MongoDB](https://www.mongodb.com/) & [Mongoose v9.9.2](https://mongoosejs.com/)
+- **Authentication:** [JSON Web Tokens (JWT) v9.0.3](https://jwt.io/) & bcryptjs v3.0.3
 
 ---
 
@@ -143,12 +143,12 @@ MobileRepairPos/
 ---
 
 ## 🌍 Live Demo
-**Link:** [https://your-demo-url.vercel.app](https://your-demo-url.vercel.app)
+**Link:** [https://mobile-repair-pos.vercel.app/](https://mobile-repair-pos.vercel.app/)
 
 ---
 
 ## 📚 Documentation
-**Link:** [https://your-documentation-url.com](https://your-documentation-url.com)
+**Link:** [https://mobile-repair-doc.sumsols.com/](https://mobile-repair-doc.sumsols.com/)
 
 ---
 
@@ -184,7 +184,7 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 ---
 
 ## 📱 App Links & Socials
-- **Web App Link:** [Mobile Repair POS Live](#)
+- **Web App Link:** [Mobile Repair POS Live](https://mobile-repair-pos.vercel.app/)
 - **Android App:** [Coming Soon](#)
 - **iOS App:** [Coming Soon](#)
 - **Support Group:** [Telegram/Discord Link](#)

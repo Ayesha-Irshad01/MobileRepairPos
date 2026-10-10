@@ -4,6 +4,10 @@ $(document).ready(function() {
         $('#sidebar').toggleClass('-translate-x-full');
     });
 
+    $('#closeSidebar').click(function() {
+        $('#sidebar').addClass('-translate-x-full');
+    });
+
     // Dark Mode Toggle
     const currentTheme = localStorage.getItem('theme');
     if (currentTheme === 'dark') {

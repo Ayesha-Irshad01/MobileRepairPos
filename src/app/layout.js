@@ -28,7 +28,7 @@ export default function RootLayout({ children }) {
       <body className="min-h-full flex flex-col">
         {/*
           Runs before any React hydration to apply dark/accent class from
-          localStorage — prevents flash of wrong theme on hard refresh.
+          localStorage - prevents flash of wrong theme on hard refresh.
           strategy="beforeInteractive" injects this into the HTML <head>
           before any other scripts.
         */}
