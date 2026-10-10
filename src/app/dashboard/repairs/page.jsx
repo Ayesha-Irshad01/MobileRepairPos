@@ -406,22 +406,22 @@ function RepairsPageInner() {
 
               <thead className="bg-gray-50/50 border-b border-gray-100">
                 <tr>
-                  <th className="text-left px-6 py-3 text-xs font-semibold uppercase tracking-wide text-gray-500">
+                  <th className="text-left px-4 py-3 text-xs font-semibold uppercase tracking-wide text-gray-500">
                     Repair
                   </th>
-                  <th className="text-left px-6 py-3 text-xs font-semibold uppercase tracking-wide text-gray-500">
+                  <th className="text-left px-4 py-3 text-xs font-semibold uppercase tracking-wide text-gray-500">
                     Customer
                   </th>
-                  <th className="text-left px-6 py-3 text-xs font-semibold uppercase tracking-wide text-gray-500">
+                  <th className="text-left px-4 py-3 text-xs font-semibold uppercase tracking-wide text-gray-500">
                     Device
                   </th>
-                  <th className="text-left px-6 py-3 text-xs font-semibold uppercase tracking-wide text-gray-500">
+                  <th className="text-left px-4 py-3 text-xs font-semibold uppercase tracking-wide text-gray-500">
                     Status
                   </th>
-                  <th className="text-left px-6 py-3 text-xs font-semibold uppercase tracking-wide text-gray-500">
+                  <th className="text-left px-4 py-3 text-xs font-semibold uppercase tracking-wide text-gray-500">
                     Priority
                   </th>
-                  <th className="text-right px-6 py-3 text-xs font-semibold uppercase tracking-wide text-gray-500">
+                  <th className="text-left px-4 py-3 text-xs font-semibold uppercase tracking-wide text-gray-500">
                     Actions
                   </th>
                 </tr>
@@ -445,7 +445,7 @@ function RepairsPageInner() {
 
                     {/* REPAIR */}
 
-                    <td className="px-6 py-4">
+                    <td className="px-4 py-3">
 
                       <div className="font-medium text-gray-900">
                         {repair.repairNo}
@@ -460,7 +460,7 @@ function RepairsPageInner() {
 
                     {/* CUSTOMER */}
 
-                    <td className="px-6 py-4">
+                    <td className="px-4 py-3">
 
                       <div className="font-medium text-gray-800">
                         {repair.customer?.name ||
@@ -475,7 +475,7 @@ function RepairsPageInner() {
 
                     {/* DEVICE */}
 
-                    <td className="px-6 py-4">
+                    <td className="px-4 py-3">
 
                       <div className="font-medium text-gray-800">
                         {repair.device
@@ -491,7 +491,7 @@ function RepairsPageInner() {
 
                     {/* STATUS */}
 
-                    <td className="px-6 py-4">
+                    <td className="px-4 py-3">
 
                       <span
                         className={`inline-flex rounded-full px-2.5 py-1 text-xs font-medium ${getStatusClass(
@@ -505,7 +505,7 @@ function RepairsPageInner() {
 
                     {/* PRIORITY */}
 
-                    <td className="px-6 py-4">
+                    <td className="px-4 py-3">
 
                       <span className="text-gray-700">
                         {repair.priority || "Normal"}
@@ -515,10 +515,10 @@ function RepairsPageInner() {
 
                     {/* ACTIONS */}
 
-                    <td className="px-6 py-4">
+                    <td className="px-4 py-3">
 
                       <div
-                        className="flex justify-end items-center gap-2"
+                        className="flex justify-start items-center gap-2"
                         onClick={(e) =>
                           e.stopPropagation()
                         }

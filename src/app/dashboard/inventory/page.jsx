@@ -131,25 +131,25 @@ export default function InventoryPage() {
 
               <thead className="border-b border-gray-100 bg-gray-50/50">
                 <tr>
-                  <th className="px-6 py-3 text-xs font-semibold uppercase tracking-wide text-gray-500">
+                  <th className="px-4 py-3 text-xs font-semibold uppercase tracking-wide text-gray-500">
                     Item
                   </th>
-                  <th className="px-6 py-3 text-xs font-semibold uppercase tracking-wide text-gray-500">
+                  <th className="px-4 py-3 text-xs font-semibold uppercase tracking-wide text-gray-500">
                     SKU
                   </th>
-                  <th className="px-6 py-3 text-xs font-semibold uppercase tracking-wide text-gray-500">
+                  <th className="px-4 py-3 text-xs font-semibold uppercase tracking-wide text-gray-500">
                     Category
                   </th>
-                  <th className="px-6 py-3 text-xs font-semibold uppercase tracking-wide text-gray-500 text-right">
+                  <th className="px-4 py-3 text-xs font-semibold uppercase tracking-wide text-gray-500 text-right">
                     Quantity
                   </th>
-                  <th className="px-6 py-3 text-xs font-semibold uppercase tracking-wide text-gray-500 text-right">
+                  <th className="px-4 py-3 text-xs font-semibold uppercase tracking-wide text-gray-500 text-right">
                     Price
                   </th>
-                  <th className="px-6 py-3 text-xs font-semibold uppercase tracking-wide text-gray-500">
+                  <th className="px-4 py-3 text-xs font-semibold uppercase tracking-wide text-gray-500">
                     Status
                   </th>
-                  <th className="px-6 py-3 text-xs font-semibold uppercase tracking-wide text-gray-500 text-right">
+                  <th className="px-4 py-3 text-xs font-semibold uppercase tracking-wide text-gray-500 text-left">
                     Actions
                   </th>
                 </tr>
@@ -167,7 +167,7 @@ export default function InventoryPage() {
                   >
 
                     {/* Item */}
-                    <td className="px-6 py-4">
+                    <td className="px-4 py-3">
                       <div className="font-medium text-gray-900">
                         {item.item}
                       </div>
@@ -180,17 +180,17 @@ export default function InventoryPage() {
                     </td>
 
                     {/* SKU */}
-                    <td className="px-6 py-4 text-gray-600">
+                    <td className="px-4 py-3 text-gray-600">
                       {item.sku}
                     </td>
 
                     {/* Category */}
-                    <td className="px-6 py-4 text-gray-600">
+                    <td className="px-4 py-3 text-gray-600">
                       {item.category}
                     </td>
 
                     {/* Quantity */}
-                    <td className="px-6 py-4 text-right">
+                    <td className="px-4 py-3 text-right">
                       <span
                         className={
                           isLowStock(item)
@@ -206,12 +206,12 @@ export default function InventoryPage() {
                     </td>
 
                     {/* Price */}
-                    <td className="px-6 py-4 font-medium text-gray-900 text-right">
+                    <td className="px-4 py-3 font-medium text-gray-900 text-right">
                       {Number(item.price || 0).toLocaleString()}
                     </td>
 
                     {/* Status */}
-                    <td className="px-6 py-4">
+                    <td className="px-4 py-3">
                       {!item.isActive ? (
                         <span className="inline-flex rounded-md border border-gray-200 bg-gray-50 px-2 py-1 text-xs font-medium text-gray-600">
                           Inactive
@@ -227,10 +227,10 @@ export default function InventoryPage() {
                       )}
                     </td>
                     <td
-                      className="px-6 py-4 whitespace-nowrap text-right"
+                      className="px-4 py-3 whitespace-nowrap text-left"
                       onClick={(e) => e.stopPropagation()}
                     >
-                      <div className="flex items-center justify-end gap-2">
+                      <div className="flex items-center justify-start gap-2">
                         <button
                           type="button"
                           onClick={() =>

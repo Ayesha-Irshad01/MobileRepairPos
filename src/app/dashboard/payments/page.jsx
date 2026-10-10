@@ -102,22 +102,22 @@ export default function PaymentsPage() {
 
           <thead className="bg-gray-50/50 border-b border-gray-100">
             <tr>
-              <th className="text-left px-6 py-3 text-xs font-semibold uppercase tracking-wide text-gray-500">
+              <th className="text-left px-4 py-3 text-xs font-semibold uppercase tracking-wide text-gray-500">
                 Customer
               </th>
-              <th className="text-right px-6 py-3 text-xs font-semibold uppercase tracking-wide text-gray-500">
+              <th className="text-right px-4 py-3 text-xs font-semibold uppercase tracking-wide text-gray-500">
                 Amount
               </th>
-              <th className="text-left px-6 py-3 text-xs font-semibold uppercase tracking-wide text-gray-500">
+              <th className="text-left px-4 py-3 text-xs font-semibold uppercase tracking-wide text-gray-500">
                 Method
               </th>
-              <th className="text-left px-6 py-3 text-xs font-semibold uppercase tracking-wide text-gray-500">
+              <th className="text-left px-4 py-3 text-xs font-semibold uppercase tracking-wide text-gray-500">
                 Date
               </th>
-              <th className="text-left px-6 py-3 text-xs font-semibold uppercase tracking-wide text-gray-500">
+              <th className="text-left px-4 py-3 text-xs font-semibold uppercase tracking-wide text-gray-500">
                 Invoice
               </th>
-              <th className="text-right px-6 py-3 text-xs font-semibold uppercase tracking-wide text-gray-500">
+              <th className="text-left px-4 py-3 text-xs font-semibold uppercase tracking-wide text-gray-500">
                 Actions
               </th>
             </tr>
@@ -154,33 +154,33 @@ export default function PaymentsPage() {
                   className="hover:bg-slate-50 transition-colors duration-150 cursor-pointer"
                 >
                   {/* Customer */}
-                  <td className="px-6 py-4 font-medium text-gray-900 whitespace-nowrap">
+                  <td className="px-4 py-3 font-medium text-gray-900 whitespace-nowrap">
                     {payment.customer?.name || payment.customerName || "Deleted Customer"}
                   </td>
 
                   {/* Amount */}
-                  <td className="px-6 py-4 font-semibold text-gray-900 text-right whitespace-nowrap">
+                  <td className="px-4 py-3 font-semibold text-gray-900 text-right whitespace-nowrap">
                     Rs. {Number(payment.amount).toLocaleString()}
                   </td>
 
                   {/* Method */}
-                  <td className="px-6 py-4 text-gray-600">
+                  <td className="px-4 py-3 text-gray-600">
                     {payment.paymentMethod}
                   </td>
 
                   {/* Date */}
-                  <td className="px-6 py-4 text-gray-600">
+                  <td className="px-4 py-3 text-gray-600">
                     {formatDate(payment.paymentDate, settings)}
                   </td>
 
                   {/* Invoice */}
-                  <td className="px-6 py-4 text-gray-600">
+                  <td className="px-4 py-3 text-gray-600">
                     {payment.relatedInvoice?.invoiceNo || "—"}
                   </td>
 
                   {/* Actions */}
-                  <td className="px-6 py-4 text-right whitespace-nowrap" onClick={(e) => e.stopPropagation()}>
-                    <div className="flex items-center justify-end gap-2">
+                  <td className="px-4 py-3 text-left whitespace-nowrap" onClick={(e) => e.stopPropagation()}>
+                    <div className="flex items-center justify-start gap-2">
                       <button
                         onClick={(e) => {
                           e.stopPropagation();

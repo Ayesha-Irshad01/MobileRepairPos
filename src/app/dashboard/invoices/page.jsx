@@ -206,27 +206,27 @@ export default function InvoicesPage() {
 
               <thead className="border-b border-gray-100 bg-gray-50/50">
                 <tr>
-                  <th className="px-5 py-3 text-left text-xs font-semibold uppercase tracking-wide text-gray-500">
+                  <th className="px-4 py-3 text-left text-xs font-semibold uppercase tracking-wide text-gray-500">
                     Invoice
                   </th>
 
-                  <th className="px-5 py-3 text-left text-xs font-semibold uppercase tracking-wide text-gray-500">
+                  <th className="px-4 py-3 text-left text-xs font-semibold uppercase tracking-wide text-gray-500">
                     Customer
                   </th>
 
-                  <th className="px-5 py-3 text-left text-xs font-semibold uppercase tracking-wide text-gray-500">
+                  <th className="px-4 py-3 text-left text-xs font-semibold uppercase tracking-wide text-gray-500">
                     Invoice Date
                   </th>
 
-                  <th className="px-5 py-3 text-left text-xs font-semibold uppercase tracking-wide text-gray-500">
+                  <th className="px-4 py-3 text-left text-xs font-semibold uppercase tracking-wide text-gray-500">
                     Due Date
                   </th>
 
-                  <th className="px-5 py-3 text-right text-xs font-semibold uppercase tracking-wide text-gray-500">
+                  <th className="px-4 py-3 text-right text-xs font-semibold uppercase tracking-wide text-gray-500">
                     Total
                   </th>
 
-                  <th className="px-5 py-3 text-right text-xs font-semibold uppercase tracking-wide text-gray-500">
+                  <th className="px-4 py-3 text-left text-xs font-semibold uppercase tracking-wide text-gray-500">
                     Actions
                   </th>
                 </tr>
@@ -241,7 +241,7 @@ export default function InvoicesPage() {
                   >
 
                     {/* Invoice number */}
-                    <td className="px-5 py-4">
+                    <td className="px-4 py-3">
                       <button
                         type="button"
                         onClick={() => handleView(invoice._id)}
@@ -252,28 +252,27 @@ export default function InvoicesPage() {
                     </td>
 
                     {/* Customer */}
-                    <td className="px-5 py-4 text-sm text-gray-700">
+                    <td className="px-4 py-3 text-sm text-gray-700">
                       {invoice.customer?.name || "Unknown"}
                     </td>
 
                     {/* Invoice date */}
-                    <td className="px-5 py-4 text-sm text-gray-600">
+                    <td className="px-4 py-3 text-sm text-gray-600">
                       {formatDate(invoice.invoiceDate)}
                     </td>
 
                     {/* Due date */}
-                    <td className="px-5 py-4 text-sm text-gray-600">
+                    <td className="px-4 py-3 text-sm text-gray-600">
                       {formatDate(invoice.dueDate)}
                     </td>
 
                     {/* Total */}
-                    <td className="px-5 py-4 text-sm font-semibold text-gray-900 text-right">
+                    <td className="px-4 py-3 text-sm font-semibold text-gray-900 text-right">
                       {formatCurrency(invoice.total)}
                     </td>
 
-                    {/* Actions */}
-                    <td className="px-5 py-4 whitespace-nowrap text-right">
-                      <div className="flex items-center justify-end gap-2">
+                    <td className="px-4 py-3 whitespace-nowrap text-left">
+                      <div className="flex items-center justify-start gap-2">
                         <button
                           type="button"
                           onClick={() => handleView(invoice._id)}

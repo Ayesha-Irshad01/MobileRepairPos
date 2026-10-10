@@ -178,25 +178,25 @@ export default function ExpensesPage() {
 
               <thead className="border-b border-gray-100 bg-gray-50/50">
                 <tr>
-                  <th className="px-6 py-3 text-xs font-semibold uppercase tracking-wide text-gray-500">
+                  <th className="px-4 py-3 text-xs font-semibold uppercase tracking-wide text-gray-500">
                     Expense No
                   </th>
-                  <th className="px-6 py-3 text-xs font-semibold uppercase tracking-wide text-gray-500">
+                  <th className="px-4 py-3 text-xs font-semibold uppercase tracking-wide text-gray-500">
                     Date
                   </th>
-                  <th className="px-6 py-3 text-xs font-semibold uppercase tracking-wide text-gray-500">
+                  <th className="px-4 py-3 text-xs font-semibold uppercase tracking-wide text-gray-500">
                     Description
                   </th>
-                  <th className="px-6 py-3 text-xs font-semibold uppercase tracking-wide text-gray-500">
+                  <th className="px-4 py-3 text-xs font-semibold uppercase tracking-wide text-gray-500">
                     Category
                   </th>
-                  <th className="px-6 py-3 text-xs font-semibold uppercase tracking-wide text-gray-500">
+                  <th className="px-4 py-3 text-xs font-semibold uppercase tracking-wide text-gray-500">
                     Payment
                   </th>
-                  <th className="px-6 py-3 text-xs font-semibold uppercase tracking-wide text-gray-500 text-right">
+                  <th className="px-4 py-3 text-xs font-semibold uppercase tracking-wide text-gray-500 text-right">
                     Amount
                   </th>
-                  <th className="px-6 py-3 text-xs font-semibold uppercase tracking-wide text-gray-500 text-right">
+                  <th className="px-4 py-3 text-xs font-semibold uppercase tracking-wide text-gray-500 text-left">
                     Actions
                   </th>
                 </tr>
@@ -214,36 +214,36 @@ export default function ExpensesPage() {
                     className="cursor-pointer hover:bg-gray-50"
                   >
 
-                    <td className="px-6 py-4 font-medium text-gray-900">
+                    <td className="px-4 py-3 font-medium text-gray-900">
                       {expense.expenseNo}
                     </td>
 
-                    <td className="px-6 py-4 text-gray-600">
+                    <td className="px-4 py-3 text-gray-600">
                       {new Date(
                         expense.date
                       ).toLocaleDateString()}
                     </td>
 
-                    <td className="px-6 py-4 text-gray-600">
+                    <td className="px-4 py-3 text-gray-600">
                       {expense.description || "—"}
                     </td>
 
-                    <td className="px-6 py-4 text-gray-600">
+                    <td className="px-4 py-3 text-gray-600">
                       {expense.category}
                     </td>
 
-                    <td className="px-6 py-4 text-gray-600">
+                    <td className="px-4 py-3 text-gray-600">
                       {expense.paymentMethod}
                     </td>
 
-                    <td className="px-6 py-4 font-medium text-gray-900 text-right">
+                    <td className="px-4 py-3 font-medium text-gray-900 text-right">
                       {Number(
                         expense.total ?? expense.amount ?? 0
                       ).toFixed(2)}
                     </td>
 
-                    <td className="px-6 py-4 whitespace-nowrap text-right">
-                      <div className="flex items-center justify-end gap-2">
+                    <td className="px-4 py-3 whitespace-nowrap text-left">
+                      <div className="flex items-center justify-start gap-2">
                         <button
                           onClick={(e) => {
                             e.stopPropagation();

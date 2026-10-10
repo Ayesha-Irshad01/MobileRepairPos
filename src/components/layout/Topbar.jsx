@@ -1,6 +1,6 @@
 'use client';
 import React, { useEffect, useState, useRef } from 'react';
-import { Search, Plus, Bell, X } from 'lucide-react';
+import { Search, Plus, X } from 'lucide-react';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 
@@ -109,14 +109,6 @@ export default function Topbar() {
 
       {/* ── Right: actions ────────────────────────────────────── */}
       <div className="flex items-center gap-2 flex-shrink-0">
-        <button
-          type="button"
-          className="relative w-9 h-9 flex items-center justify-center rounded-xl text-gray-500 dark:text-white/40 hover:text-gray-800 dark:hover:text-white/80 hover:bg-gray-100 dark:hover:bg-white/[0.06] transition-all duration-150 focus:outline-none"
-          aria-label="Notifications"
-        >
-          <Bell className="w-[18px] h-[18px]" />
-          <span className="absolute top-2 right-2 block h-2 w-2 rounded-full bg-red-500 ring-2 ring-white dark:ring-[#161b22]" />
-        </button>
 
         <Link
           href="/dashboard/repairs/new"

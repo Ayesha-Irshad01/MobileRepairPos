@@ -160,19 +160,19 @@ async function handleDeleteCustomer(customerId) {
               {/* Table Header */}
               <thead className="bg-gray-50 border-b border-gray-200">
                 <tr>
-                  <th className="text-left px-6 py-3 font-medium text-gray-500 uppercase tracking-wider text-xs">
+                  <th className="text-left px-4 py-3 font-medium text-gray-500 uppercase tracking-wider text-xs">
                     Name
                   </th>
-                  <th className="text-left px-6 py-3 font-medium text-gray-500 uppercase tracking-wider text-xs">
+                  <th className="text-left px-4 py-3 font-medium text-gray-500 uppercase tracking-wider text-xs">
                     Phone
                   </th>
-                  <th className="text-left px-6 py-3 font-medium text-gray-500 uppercase tracking-wider text-xs">
+                  <th className="text-left px-4 py-3 font-medium text-gray-500 uppercase tracking-wider text-xs">
                     Email
                   </th>
-                  <th className="text-left px-6 py-3 font-medium text-gray-500 uppercase tracking-wider text-xs">
+                  <th className="text-left px-4 py-3 font-medium text-gray-500 uppercase tracking-wider text-xs">
                     Address
                   </th>
-                  <th className="text-right px-6 py-3 font-medium text-gray-500 uppercase tracking-wider text-xs">
+                  <th className="text-left px-4 py-3 font-medium text-gray-500 uppercase tracking-wider text-xs">
                     Actions
                   </th>
                 </tr>
@@ -190,24 +190,24 @@ async function handleDeleteCustomer(customerId) {
                     }
                     className="hover:bg-slate-50 transition-colors duration-150 cursor-pointer"
                   >
-                    <td className="px-6 py-4 font-medium text-gray-900 whitespace-nowrap">
+                    <td className="px-4 py-3 font-medium text-gray-900 whitespace-nowrap">
                       {customer.name}
                     </td>
 
-                    <td className="px-6 py-4 text-gray-600 whitespace-nowrap">
+                    <td className="px-4 py-3 text-gray-600 whitespace-nowrap">
                       {customer.phone}
                     </td>
 
-                    <td className="px-6 py-4 text-gray-600 whitespace-nowrap">
+                    <td className="px-4 py-3 text-gray-600 whitespace-nowrap">
                       {customer.email || "—"}
                     </td>
 
-                    <td className="px-6 py-4 text-gray-600 whitespace-nowrap">
+                    <td className="px-4 py-3 text-gray-600 whitespace-nowrap">
                       {customer.address || "—"}
                     </td>
-                    <td className="px-6 py-4 whitespace-nowrap"
+                    <td className="px-4 py-3 whitespace-nowrap text-left"
                     onClick={(e) => e.stopPropagation()}>
-                      <div className="flex items-center justify-end gap-2">
+                      <div className="flex items-center justify-start gap-2">
                         <button
                           type="button"
                           onClick={() =>

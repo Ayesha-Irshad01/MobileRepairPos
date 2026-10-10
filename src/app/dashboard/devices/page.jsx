@@ -198,16 +198,16 @@ export default function DevicesPage() {
             <table className="w-full text-sm">
               <thead>
                 <tr className="border-b border-gray-100">
-                  <th className="text-left px-6 py-3 text-xs font-semibold text-gray-500 uppercase tracking-wider">
+                  <th className="text-left px-4 py-3 text-xs font-semibold text-gray-500 uppercase tracking-wider">
                     Device
                   </th>
-                  <th className="text-left px-6 py-3 text-xs font-semibold text-gray-500 uppercase tracking-wider">
+                  <th className="text-left px-4 py-3 text-xs font-semibold text-gray-500 uppercase tracking-wider">
                     Model
                   </th>
-                  <th className="text-left px-6 py-3 text-xs font-semibold text-gray-500 uppercase tracking-wider">
+                  <th className="text-left px-4 py-3 text-xs font-semibold text-gray-500 uppercase tracking-wider">
                     Category
                   </th>
-                  <th className="text-right px-6 py-3 text-xs font-semibold text-gray-500 uppercase tracking-wider">
+                  <th className="text-left px-4 py-3 text-xs font-semibold text-gray-500 uppercase tracking-wider">
                     Actions
                   </th>
                 </tr>
@@ -245,7 +245,7 @@ export default function DevicesPage() {
                       className="hover:bg-slate-50/70 transition-colors duration-100"
                     >
                       {/* Brand + icon */}
-                      <td className="px-6 py-3.5 whitespace-nowrap">
+                      <td className="px-4 py-3 whitespace-nowrap">
                         <div className="flex items-center gap-3">
                           <div className="w-8 h-8 rounded-lg bg-gradient-to-br from-slate-100 to-slate-200 flex items-center justify-center flex-shrink-0">
                             <Smartphone className="w-4 h-4 text-slate-500" />
@@ -257,12 +257,12 @@ export default function DevicesPage() {
                       </td>
 
                       {/* Model */}
-                      <td className="px-6 py-3.5 text-gray-600 whitespace-nowrap">
+                      <td className="px-4 py-3 text-gray-600 whitespace-nowrap">
                         {device.model}
                       </td>
 
                       {/* Category badge */}
-                      <td className="px-6 py-3.5 whitespace-nowrap">
+                      <td className="px-4 py-3 whitespace-nowrap">
                         <span
                           className={`inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium ring-1 ${catBadge(device.category)}`}
                         >
@@ -270,12 +270,11 @@ export default function DevicesPage() {
                         </span>
                       </td>
 
-                      {/* Actions */}
                       <td
-                        className="px-6 py-3.5 whitespace-nowrap text-right"
+                        className="px-4 py-3 whitespace-nowrap text-left"
                         onClick={(e) => e.stopPropagation()}
                       >
-                        <div className="inline-flex items-center gap-2">
+                        <div className="inline-flex items-center justify-start gap-2">
                           {/* View */}
                           <button
                             type="button"
